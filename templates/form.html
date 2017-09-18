@@ -1,0 +1,27 @@
+<html>
+
+    <body>
+        <h1 style='text-align:center'>Test Chatbot</h1>
+
+        <form>
+            <div style='text-align:center'> 
+            <input type="text" name="input" placeholder="What do you want to chat about?" size="100"> 
+            </div>
+            {% if user|length > 0 %}
+                {% for i in range(0, user | length) %}
+                    <div style='text-align:center'> 
+                        You: {{ user[i] }}
+                    </div>
+                    <div style='text-align:center'>
+                        Bot: {{ response[i] }}
+                    </div>
+                    <br>
+                {% endfor %}
+            {% endif %}
+            <div style='text-align:center'>
+            <input type="submit" formmethod='post'>
+            </div>
+        </form>
+    </body>
+
+</html>
